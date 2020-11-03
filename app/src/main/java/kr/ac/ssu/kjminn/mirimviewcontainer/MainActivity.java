@@ -3,6 +3,7 @@ package kr.ac.ssu.kjminn.mirimviewcontainer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ViewFlipper;
@@ -26,6 +27,21 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.btn_prev:
+                    flipper.setFlipInterval(1000);
+                    flipper.startFlipping();
+                    break;
+                case R.id.btn_next:
+                    flipper.stopFlipping();
+                    break;
+            }
+        }
+    };
+
+/*    View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.btn_prev:
                     flipper.showPrevious();
                     break;
                 case R.id.btn_next:
@@ -33,5 +49,5 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
-    };
+    };*/
 }
